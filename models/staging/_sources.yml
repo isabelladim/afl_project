@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: raw
+    schema: raw          
+    tables:
+      - name: games
+      - name: standings
+      - name: teams
+      - name: tips
+      - name: ladder
