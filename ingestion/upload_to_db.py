@@ -42,7 +42,7 @@ def main():
     year = 2026
     team_ID = 15 #St Kilda
     datasets = {
-        "games": API_connection.get_team_games(year, team_ID, user_agent),
+        "games": API_connection.get_afl_info("games", year, user_agent),
         "standings": API_connection.get_afl_info("standings", year, user_agent),
         "ladder": API_connection.get_afl_info("ladder", year, user_agent),
         "teams": API_connection.get_afl_info("teams", year, user_agent),
