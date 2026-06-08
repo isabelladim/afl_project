@@ -5,3 +5,8 @@ env/
 __pycache__/
 *.pyc
 *.log
+dbt_packages/
+dbt_internal_packages/
+logs/
+target/
+
