@@ -1,10 +1,11 @@
 version: 2
 sources:
-  - name: raw
-    schema: raw          
+  - name: RAW
+    database: AFL
+    schema: RAW          
     tables:
-      - name: games
-      - name: standings
-      - name: teams
-      - name: tips
-      - name: ladder
+      - name: GAMES
+      - name: STANDINGS
+      - name: TEAMS
+      - name: TIPS
+      - name: LADDER
