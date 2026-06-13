@@ -20,7 +20,8 @@ def get_snowflake_connection():
 def upload_to_snowflake(records, table_name, conn) -> None:
     df = pd.DataFrame(records)
     df.columns = df.columns.str.upper() #upper column names to match snowflake convention
-    success, nchunks, nrows, _ = snowflake.connector.pandas_tools.write_pandas(conn=conn, df=df, table_name=table_name, schema="RAW", quote_identifiers=False,auto_create_table=True, overwrite=True)
+    df = df.rename(columns={"LOCALTIME": "LOCAL_TIME"})   # dodge the reserved word
+    success, nchunks, nrows, _ = snowflake.connector.pandas_tools.write_pandas(conn=conn, df=df, table_name=table_name, schema="RAW", quote_identifiers=True,auto_create_table=True, overwrite=True)
     if success:
         logging.info("Successfully uploaded %d rows to Snowflake table %s", nrows, table_name)
     else:
