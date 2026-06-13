@@ -9,4 +9,6 @@ dbt_packages/
 dbt_internal_packages/
 logs/
 target/
+*.p8
+*.pub
 
