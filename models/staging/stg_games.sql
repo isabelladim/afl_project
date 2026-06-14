@@ -1,5 +1,5 @@
 select 
-cast(LOCAL_TIME) as timestamp) as local_time,
+cast(LOCAL_TIME as timestamp) as local_time,
 cast(hgoals as integer) as home_goals,
 cast("YEAR" as integer) as season,
 cast(round as integer) as round,
