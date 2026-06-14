@@ -1,6 +1,4 @@
 import os 
-import pandas as pd
-import snowflake.connector.pandas_tools
 from dotenv import load_dotenv
 import upload_to_snowflake
 from upload_to_snowflake import get_snowflake_connection, upload_to_snowflake
@@ -20,7 +18,6 @@ user_agent = os.environ["SQUIGGLE_USER_AGENT"]
 def main():
     engion = get_snowflake_connection() #connect to snowflake
     year = 2026
-    team_ID = 15 #St Kilda
     datasets = {
         "GAMES": API_connection.get_afl_info("games", year, user_agent),
         "STANDINGS": API_connection.get_afl_info("standings", year, user_agent),
