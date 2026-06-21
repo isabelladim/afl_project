@@ -15,4 +15,4 @@ models:
     staging:
       +materialized: view
     marts:
-      +materialized: "{{ 'table' if target.name == 'prod' else 'view' }}"
+      +materialized: "{{ 'table' if target.name == 'prod' else 'view' }}" #differentiate between prod and dev environments - tables in prod, views in dev
